@@ -4,14 +4,15 @@ This project explores the price elasticity of conversion in e-commerce and demon
 
 It is built as a professional analytics portfolio project for e-commerce and pricing analyst roles. The dashboard segments products by elasticity, compares conversion across price tiers, highlights revenue density, and recommends product-level pricing tests.
 
-Live demo: [replace with your Vercel deployment URL](https://pricing-funnel.vercel.app)
+Live demo: [https://pricing-funnel.vercel.app](https://pricing-funnel.vercel.app)
 
 ## Technology Stack
 
 - Next.js App Router
 - Recharts for interactive charts
 - Tailwind CSS for responsive dashboard styling
-- Python/pandas for initial data exploration if used; the committed dataset is generated with a reproducible Node.js script
+- Reproducible Node.js data generation script for the synthetic dataset
+- Python/pandas can be used for initial data exploration if the dataset is extended later
 - Vercel for deployment
 
 ## Dataset And Source
@@ -84,12 +85,24 @@ npm run start
 
 ## Deploy on Vercel
 
-This is a standard Next.js app and needs no custom Vercel configuration.
+This is a standard Next.js app deployed on Vercel:
+
+- Production URL: [https://pricing-funnel.vercel.app](https://pricing-funnel.vercel.app)
+- The repo includes `vercel.json` with `"framework": "nextjs"` so Vercel builds the App Router project correctly.
+- This config prevents Vercel from treating the `public/` folder as the static output directory, which would otherwise cause a production `404: NOT_FOUND`.
 
 1. Push the repo to GitHub.
 2. Import it in Vercel.
-3. Keep the default build command: `npm run build`.
-4. Keep the default output settings.
+3. Use the Next.js framework preset. The committed `vercel.json` enforces this automatically.
+4. Keep the build command as `npm run build`.
+5. Do not set the output directory to `public`.
+
+Manual production deploy:
+
+```bash
+npx vercel build --prod
+npx vercel deploy --prebuilt --prod
+```
 
 ## Repository Structure
 
