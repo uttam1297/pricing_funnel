@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Price Elasticity Conversion Dashboard",
   description:
     "An interactive e-commerce pricing analysis dashboard for conversion elasticity and revenue optimization.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
